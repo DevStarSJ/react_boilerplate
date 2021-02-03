@@ -21,7 +21,14 @@
     "@typescript-eslint/eslint-plugin-tslint": "^4.14.2",
     "@typescript-eslint/parser": "^4.14.2",
     "eslint": "^7.19.0",
+    "prettier": "^2.2.1",
     "typescript": "4.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "printWidth": 100,
+    "arrowParens": "avoid"
   },
   "license": "MIT"
 }
