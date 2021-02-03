@@ -1,8 +1,9 @@
 # Install Process
 
-- Reference : <https://velog.io/@hwang-eunji/React-Next-and-Typescript-1-설치>
+- Reference : <https://velog.io/@jakeseo_me/다시-프론트-틀잡기-1-타입스크립트-next.js-9>
 ```bash
 npx create-next-app --example with-typescript react_boilerplate
+yarn add eslint @typescript-eslint/eslint-plugin @typescript-eslint/eslint-plugin-tslint @typescript-eslint/parser -D
 ```
 
 # TypeScript Next.js example
