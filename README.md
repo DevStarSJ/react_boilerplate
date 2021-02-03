@@ -5,6 +5,7 @@
 npx create-next-app --example with-typescript react_boilerplate
 yarn add eslint @typescript-eslint/eslint-plugin @typescript-eslint/eslint-plugin-tslint @typescript-eslint/parser -D
 yarn add prettier -D
+yarn add husky -D
 ```
 
 # TypeScript Next.js example
