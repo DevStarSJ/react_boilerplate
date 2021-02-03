@@ -7,6 +7,7 @@ yarn add eslint @typescript-eslint/eslint-plugin @typescript-eslint/eslint-plugi
 yarn add prettier -D
 yarn add husky -D
 yarn add babel-plugin-module-resolver -D
+yarn add antd
 ```
 
 # TypeScript Next.js example
