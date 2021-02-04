@@ -8,7 +8,10 @@ yarn add prettier -D
 yarn add husky -D
 yarn add babel-plugin-module-resolver -D
 yarn add antd
+yarn add graphql @apollo/client
 ```
+
+- <https://www.daleseo.com/graphql-react-apollo-hooks>
 
 # TypeScript Next.js example
 
