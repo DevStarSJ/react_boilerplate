@@ -1,5 +1,3 @@
-import React from 'react';
-import App from 'next/app';
 import '../css/antd.css';
 import { ApolloClient, HttpLink, InMemoryCache, ApolloProvider } from '@apollo/client'
 
@@ -10,16 +8,12 @@ const apolloClient = new ApolloClient({
   cache: new InMemoryCache(),
 })
 
-class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props;
+export default function app(props: any) {
+  const { Component, pageProps } = props
 
-    return (
-      <ApolloProvider client={apolloClient}>
-        <Component {...pageProps} />
-    </ApolloProvider>
-    )
-  }
+  return (
+    <ApolloProvider client={apolloClient}>
+      <Component {...pageProps} />
+  </ApolloProvider>
+  )
 }
-
-export default MyApp;
