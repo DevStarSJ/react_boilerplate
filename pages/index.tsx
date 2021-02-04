@@ -65,7 +65,11 @@ export default function index(): ReactElement {
               <Item key='Tools & Referneces'>Tools & Referneces</Item>
             </SubMenu>
             <SubMenu key='about us' icon={<LikeOutlined />} title='about us'>
-              <Item key='Missions'>Missions</Item>
+              <Item key='Missions'>
+                <Link href="/about">
+                  <a>About</a>
+                </Link>
+              </Item>
               <Item key='Team'>Team</Item>
               <Item key='History'>History</Item>
               <Item key='Newsletter'>Newsletter</Item>
