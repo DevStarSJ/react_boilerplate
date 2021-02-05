@@ -83,6 +83,8 @@ export default function index() {
         modules={settings}
         formats={formats}
       />
+      <div>{value}</div>
+      <hr />
       <Button type="primary" onClick={ () => {
         download('test.html', value);
       }}>Save</Button>
