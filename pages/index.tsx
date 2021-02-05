@@ -14,7 +14,7 @@ export default function index(): ReactElement {
   console.log(loading, error, data)
 
   const [collapsed, setCollapsed] = useState(false)
-  const [selected, setSelected] = useState(undefined)
+  const [selected, setSelected] = useState('mail')
 
   const onCollapse = ()  => setCollapsed(!collapsed)
 

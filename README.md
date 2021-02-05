@@ -13,6 +13,13 @@ yarn add graphql @apollo/client
 
 - <https://www.daleseo.com/graphql-react-apollo-hooks>
 
+# Deploy & Connect
+
+```bash
+aws s3 sync ./.next s3://$BUCKET_NAME --acl public-read
+```
+
+<http://$BUCKET_NAME.s3-website.ap-northeast-2.amazonaws.com/>
 # TypeScript Next.js example
 
 This is a really simple project that shows the usage of Next.js with TypeScript.
