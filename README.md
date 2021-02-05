@@ -6,9 +6,10 @@ npx create-next-app --example with-typescript react_boilerplate
 yarn add eslint @typescript-eslint/eslint-plugin @typescript-eslint/eslint-plugin-tslint @typescript-eslint/parser -D
 yarn add prettier -D
 yarn add husky -D
-yarn add babel-plugin-module-resolver -D
+yarn add babel-plugin-module-resolver eslint-plugin-import eslint-import-resolver-babel-module -D
 yarn add antd
 yarn add graphql @apollo/client
+yarn add recoil
 ```
 
 - <https://www.daleseo.com/graphql-react-apollo-hooks>

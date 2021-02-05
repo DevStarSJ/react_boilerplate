@@ -1,21 +1,23 @@
 import Link from 'next/link'
 import { Menu } from 'antd'
 import { MailOutlined, AppstoreOutlined, SettingOutlined, LikeOutlined, SlackSquareOutlined, HomeOutlined } from '@ant-design/icons'
-import { ReactElement, useState } from 'react'
+import { ReactElement } from 'react'
+import { selectedMenuState } from '../libs/states'
+import { useRecoilState } from 'recoil'
 
 const { SubMenu, ItemGroup, Item } = Menu
 
 export default function index(): ReactElement {
 
-  const [selected, setSelected] = useState('home')
+  const [selectedMenu, setSelectedMenu] = useRecoilState(selectedMenuState)
 
   const menuClick = (e: any) => {
     console.log('click', e)
-    setSelected(e.key)
+    setSelectedMenu(e.key)
   }
 
   return (
-    <Menu onClick={menuClick} selectedKeys={[selected]} mode='horizontal' style={{position: 'absolute', right: '0px'}}>
+    <Menu onClick={menuClick} selectedKeys={[selectedMenu]} mode='horizontal' style={{position: 'absolute', right: '0px'}}>
       <Item key='home' icon={<HomeOutlined />}>
       <Link href="/">
         <a>Home</a>

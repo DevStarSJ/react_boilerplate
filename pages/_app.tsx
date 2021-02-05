@@ -1,4 +1,5 @@
-import '../css/antd.css';
+import '../css/antd.css'
+import { RecoilRoot } from 'recoil'
 import { ApolloClient, HttpLink, InMemoryCache, ApolloProvider } from '@apollo/client'
 
 const apolloClient = new ApolloClient({
@@ -13,7 +14,9 @@ export default function app(props: any) {
 
   return (
     <ApolloProvider client={apolloClient}>
-      <Component {...pageProps} />
+      <RecoilRoot>
+        <Component {...pageProps} />
+      </RecoilRoot>
   </ApolloProvider>
   )
 }
