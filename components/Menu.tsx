@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Menu } from 'antd'
-import { MailOutlined, AppstoreOutlined, SettingOutlined, LikeOutlined, SlackSquareOutlined, HomeOutlined } from '@ant-design/icons'
+import { MailOutlined, AppstoreOutlined, SettingOutlined, LikeOutlined, SlackSquareOutlined, HomeOutlined, FormOutlined } from '@ant-design/icons'
 import { ReactElement } from 'react'
 import { selectedMenuState } from '../libs/states'
 import { useRecoilState } from 'recoil'
@@ -19,9 +19,14 @@ export default function index(): ReactElement {
   return (
     <Menu onClick={menuClick} selectedKeys={[selectedMenu]} mode='horizontal' style={{position: 'absolute', right: '0px'}}>
       <Item key='home' icon={<HomeOutlined />}>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
+      </Item>
+      <Item key='editor' icon={<FormOutlined />}>
+        <Link href="/editor">
+          <a>Editor</a>
+        </Link>
       </Item>
       <Item key='mail' icon={<MailOutlined />}>
         offer

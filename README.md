@@ -10,6 +10,7 @@ yarn add babel-plugin-module-resolver eslint-plugin-import eslint-import-resolve
 yarn add antd
 yarn add graphql @apollo/client
 yarn add recoil
+yarn add react-quill
 ```
 
 - <https://www.daleseo.com/graphql-react-apollo-hooks>
