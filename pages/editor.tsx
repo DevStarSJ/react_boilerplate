@@ -1,6 +1,5 @@
 import Layout from '@components/Layout'
 import React, { useState } from 'react'
-import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import { Button } from 'antd'
 
@@ -75,13 +74,16 @@ function download(filename: string, text: string) {
 export default function index() {
   const [value, setValue] = useState('')
   console.log(value)
+
+  const ReactQuill = typeof window === 'object' ? require('react-quill') : () => false
+
   return (
     <Layout title="Socio > Editor">
-      <ReactQuill theme="snow" value={value} onChange={setValue} style={{ minHeight: '50vh' }}
+      <ReactQuill theme="snow" value={value} onChange={setValue}
         modules={settings}
         formats={formats}
       />
-      <Button type="primary" onClick={ e => {
+      <Button type="primary" onClick={ () => {
         download('test.html', value);
       }}>Save</Button>
     </Layout>
