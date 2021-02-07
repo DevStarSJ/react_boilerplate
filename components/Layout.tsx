@@ -20,6 +20,7 @@ export default function index({ children, title = 'This is the default title' }:
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header style={{ background: '#FFFFFF'}}>
+        {/* TODO: 링크컨설팅, 유투브 */}
         <Menu />
       </Header>
       <Content>
