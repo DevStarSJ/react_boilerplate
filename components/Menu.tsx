@@ -5,7 +5,17 @@ import { ReactElement } from 'react'
 import { selectedMenuState } from '../libs/states'
 import { useRecoilState } from 'recoil'
 
-const { SubMenu, ItemGroup, Item } = Menu
+const { SubMenu, Item } = Menu
+
+const MenuItem = (key: string, title: string, href: string, icon?: ReactElement): ReactElement => {
+  return (
+    <Item key={key}  icon={icon}>
+      <Link href={href}>
+        <a>{title}</a>
+      </Link>
+    </Item>
+  )
+}
 
 export default function index(): ReactElement {
 
@@ -18,50 +28,29 @@ export default function index(): ReactElement {
 
   return (
     <Menu onClick={menuClick} selectedKeys={[selectedMenu]} mode='horizontal' style={{position: 'absolute', right: '0px'}}>
-      <Item key='home' icon={<HomeOutlined />}>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </Item>
-      <Item key='editor' icon={<FormOutlined />}>
-        <Link href="/editor">
-          <a>Editor</a>
-        </Link>
-      </Item>
-      <Item key='mail' icon={<MailOutlined />}>
-        offer
-      </Item>
-      <Item key='app' icon={<AppstoreOutlined />}>
-        Events
-      </Item>
-      <SubMenu key='Regions' icon={<SettingOutlined />} title='Regions'>
-        <ItemGroup title='서울경기'>
-          <Item key='서울'>서울</Item>
-          <Item key='경기'>경기</Item>
-        </ItemGroup>
-        <ItemGroup title='전국'>
-          <Item key='경상도'>경상도</Item>
-          <Item key='전라도'>전라도</Item>
-          <Item key='충청도'>충청도</Item>
-          <Item key='강원도'>강원도</Item>
-        </ItemGroup>
+      {MenuItem('home', 'Home', '/', <HomeOutlined />)}
+      {MenuItem('editor', 'Editor', '/editor', <FormOutlined />)}
+      <SubMenu key='Sociocracy' icon={<SlackSquareOutlined />} title='소시오크라시 개요'>
+        {MenuItem('sociocracyWhat', '소시오크라시란 ?', '/sociocracy/what')}
+        {MenuItem('sociocracyPrinciples', '3가지 기본원리', '/sociocracy/principles')}
+        {MenuItem('sociocracyHistory', '소시오크라시 발전사', '/sociocracy/history')}
       </SubMenu>
-      <SubMenu key='Sociocracy' icon={<SlackSquareOutlined />} title='Sociocracy'>
-        <Item key='4 Basic Principles'>4 Basic Principles</Item>
-        <Item key='For What & Who ?'>For What & Who ?</Item>
-        <Item key='Videos'>Videos</Item>
-        <Item key='Tools & Referneces'>Tools & Referneces</Item>
+      <SubMenu key='about' icon={<LikeOutlined />} title='About us'>
+        {MenuItem('aboutVma', 'VMA', '/about/vma')}
+        {MenuItem('aboutIntroduction', '팀소개', '/about/introduction')}
+        {MenuItem('aboutCases', '사례', '/about/cases')}
       </SubMenu>
-      <SubMenu key='about us' icon={<LikeOutlined />} title='about us'>
-        <Item key='Missions'>
-          <Link href="/about">
-            <a>About</a>
-          </Link>
-        </Item>
-        <Item key='Team'>Team</Item>
-        <Item key='History'>History</Item>
-        <Item key='Newsletter'>Newsletter</Item>
+      <SubMenu key='programs' icon={<AppstoreOutlined />} title='교육 & 컨설팅'>
+        {MenuItem('programs1', '교육1', '/programs/1')}
+        {MenuItem('programs2', '교육2', '/programs/2')}
+        {MenuItem('programs3', '교육3', '/programs/3')}
       </SubMenu>
+      <SubMenu key='certifications' icon={<SettingOutlined />} title='인증안내'>
+        {MenuItem('certifications1', '교육1', '/certifications/1')}
+        {MenuItem('certifications2', '교육2', '/certifications/2')}
+        {MenuItem('certifications3', '교육3', '/certifications/3')}
+      </SubMenu>
+      {MenuItem('events', '서클 & 이벤트', '/events', <MailOutlined />)}
     </Menu>
   )
 }
