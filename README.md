@@ -1,3 +1,32 @@
+# 작업에 필요한 정보
+
+- 폴더구조
+  - components : React로 정의된 Component들
+  - css : css 파일 (현재는 _app.tsx 파일에서 antd.css 만 import하는 것으로 되어 있음)
+  - graphql : 서버 통신에 사용되는 GraphQL 쿼리문들을 정의
+  - libs : 함수, Const값 등 공용으로 사용될 함수, Class 등을 정의
+  - pages : 웹페이지들
+
+- css 적용
+  - 방법 1. css 파일에 class로 정의한 뒤 tag에서 `className='클래스명'`으로 사용 <- 이 방법을 선호
+  - 방법 2. tag에서 직접 `style={{ minHeight: '100vh', background: '#FFFFFF' }}`와 같으 방법으로 선언
+
+- 서버와의 통신 (GraphQL 사용)
+  - loading은 true or false 값을 나타냄 -> indicator를 표시해야할 경우 `loading === true`일때 표시하면 된다.
+
+```javascript
+import { COMPANIES } from '../graphql/companies'
+import { useQuery } from '@apollo/client'
+
+const { loading, error, data } = useQuery(COMPANIES)
+console.log(loading, error, data)
+```
+
+- Global State Management
+  - Recoil을 사용 : `Menu.tsx`을 보면 선택된 메뉴값 저장을 위해 `useRecoilState(selectedMenuState)`를 사용하는 코드가 있음
+    - 참고로 `selectedMenuState`은 `\libs\states.ts` 파일에 정의되어 있음
+
+
 # Install Process
 
 - Reference : <https://velog.io/@jakeseo_me/다시-프론트-틀잡기-1-타입스크립트-next.js-9>
