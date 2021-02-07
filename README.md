@@ -7,7 +7,7 @@ yarn add eslint @typescript-eslint/eslint-plugin @typescript-eslint/eslint-plugi
 yarn add prettier -D
 yarn add husky -D
 yarn add babel-plugin-module-resolver eslint-plugin-import eslint-import-resolver-babel-module -D
-yarn add antd
+yarn add antd sass
 yarn add graphql @apollo/client
 yarn add recoil
 yarn add react-quill
